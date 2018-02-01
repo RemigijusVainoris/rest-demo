@@ -26,13 +26,13 @@ public class CategoryServiceImpl implements CategoryService
 
     @Override public List<CategoryDTO> getAllCategories()
     {
-        List<CategoryDTO> categoryDTOs = new ArrayList<>();
+        List<CategoryDTO> categories = new ArrayList<>();
 
         categoryRepository.findAll()
                 .iterator()
-                .forEachRemaining(category -> categoryDTOs.add(categoryMapper.categoryToCategoryDTO(category)));
+                .forEachRemaining(category -> categories.add(categoryMapper.categoryToCategoryDTO(category)));
 
-        return categoryDTOs;
+        return categories;
     }
 
     @Override public CategoryDTO getCategoryByName(String name)
