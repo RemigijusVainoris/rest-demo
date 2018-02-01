@@ -8,22 +8,25 @@ import static org.junit.Assert.assertEquals;
 
 public class CategoryMapperTest
 {
-    CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
+    private static final String CATEGORY_NAME = "Test Category";
+    private static final Long CATEGORY_ID = 1L;
+
+    private CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
+
 
     @Test
     public void categoryToCategoryDTO() throws Exception
     {
         //given
-        String testCategory = "Test Category";
         Category category = new Category();
-        category.setName(testCategory);
-        category.setId(1L);
+        category.setName(CATEGORY_NAME);
+        category.setId(CATEGORY_ID);
 
         //when
         CategoryDTO categoryDTO = categoryMapper.categoryToCategoryDTO(category);
 
         //then
-        assertEquals(Long.valueOf(1L), categoryDTO.getId());
-        assertEquals(testCategory, categoryDTO.getName());
+        assertEquals(Long.valueOf(CATEGORY_ID), categoryDTO.getId());
+        assertEquals(CATEGORY_NAME, categoryDTO.getName());
     }
 }
