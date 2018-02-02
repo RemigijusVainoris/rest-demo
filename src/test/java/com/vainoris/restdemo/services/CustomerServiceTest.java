@@ -74,6 +74,5 @@ public class CustomerServiceTest
         assertEquals(CUSTOMER_ID, customerDTO.getId());
         assertEquals(CUSTOMER_FIRST_NAME, customerDTO.getFirstName());
         assertEquals(CUSTOMER_LAST_NAME, customerDTO.getLastName());
-        assertEquals("/shop/customers/" + CUSTOMER_ID, customerDTO.getCustomerUrl());
     }
 }

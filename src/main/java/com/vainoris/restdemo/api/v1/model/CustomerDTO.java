@@ -9,10 +9,4 @@ public class CustomerDTO
     private Long id;
     private String firstName;
     private String lastName;
-
-    @JsonProperty("customer_url")
-    public String getCustomerUrl()
-    {
-        return "/shop/customers/" + this.id;
-    }
 }
